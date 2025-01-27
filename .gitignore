@@ -36,10 +36,10 @@ Thumbs.db
 *.sqlite3
 migrations/
 
-# JSON and data files
-menu_scheme.json
-*.json
-*.xml
+# # JSON and data files
+# menu_scheme.json
+# *.json
+# *.xml
 
 # Byte-compiled / optimized / DLL files
 *.so
