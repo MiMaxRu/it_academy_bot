@@ -1,3 +1,50 @@
+# version: "3.9"
+# services:
+#   bot:
+#     build: .
+#     environment:
+#       - BOT_TOKEN=${BOT_TOKEN}
+#       - DATABASE_URL=${DATABASE_URL}
+#       - PYTHONPATH=/app
+#     depends_on:
+#       - db
+#     volumes:
+#       - .:/app
+#       - ./menu_scheme.json:/app/menu_scheme.json
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "10m"
+#         max-file: "3"
+#     restart: always
+#     # command: ["python", "bot/main.py"]
+#     command: >
+#       bash -c "python bot/run_migrations.py && python bot/main.py"
+
+
+#   db:
+#     image: postgres:15
+#     environment:
+#       - POSTGRES_USER=${POSTGRES_USER}
+#       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+#       - POSTGRES_DB=${POSTGRES_DB}
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+
+#   pgadmin:
+#     image: dpage/pgadmin4
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: admin@example.com
+#       PGADMIN_DEFAULT_PASSWORD: admin
+#     ports:
+#       - "5050:80"
+#     depends_on:
+#       - db
+# volumes:
+#   postgres_data:
+
+
+
 version: "3.9"
 services:
   bot:
@@ -6,8 +53,6 @@ services:
       - BOT_TOKEN=${BOT_TOKEN}
       - DATABASE_URL=${DATABASE_URL}
       - PYTHONPATH=/app
-    depends_on:
-      - db
     volumes:
       - .:/app
       - ./menu_scheme.json:/app/menu_scheme.json
@@ -17,10 +62,8 @@ services:
         max-size: "10m"
         max-file: "3"
     restart: always
-    # command: ["python", "bot/main.py"]
     command: >
       bash -c "python bot/run_migrations.py && python bot/main.py"
-
 
   db:
     image: postgres:15
@@ -31,14 +74,5 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5050:80"
-    depends_on:
-      - db
 volumes:
   postgres_data:
