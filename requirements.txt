@@ -1,0 +1,13 @@
+alembic==1.7.6
+aiogram==3.15.0
+SQLAlchemy[asyncio]==2.0.23
+asyncpg==0.27.0
+python-dotenv==1.0.0
+
+cryptography
+
+pytest-asyncio
+pytest
+flake8
+black
+isort

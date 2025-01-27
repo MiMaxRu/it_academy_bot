@@ -1,0 +1,45 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+.env.*
+
+# Logs
+*.log
+*.out
+*.err
+
+# Virtual Environments
+venv/
+env/
+*.venv/
+
+# Docker
+docker-compose.override.yml
+*.pid
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# PyTest
+.cache/
+
+# Migrations
+*.sqlite3
+migrations/
+
+# JSON and data files
+menu_scheme.json
+*.json
+*.xml
+
+# Byte-compiled / optimized / DLL files
+*.so
