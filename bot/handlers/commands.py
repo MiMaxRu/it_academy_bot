@@ -59,7 +59,7 @@ def register_commands(router: Router):
                 await message.answer("Вы успешно зарегистрированы в системе.")
 
             await message.answer(
-                    get_admin_status(session, id_chat)
+                    await get_admin_status(session, id_chat)
                 )
 
             if get_admin_status(session, id_chat) == True:
