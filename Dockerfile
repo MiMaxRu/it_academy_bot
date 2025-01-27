@@ -5,4 +5,5 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN black . && isort .
 # RUN flake8 . && black . --check && isort . --check-only
-CMD ["pytest", "&&", "python", "bot/main.py"]
+# CMD ["pytest", "&&", "python", "bot/main.py"]
+CMD ["python", "bot/main.py"]
